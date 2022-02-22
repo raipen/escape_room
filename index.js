@@ -14,9 +14,9 @@ module.exports ={
     }
     var result="";
     if(queryData.retry==1){
-      result = template.result_html("",fs.readFileSync("./index.html")+"<div>존재하지 않는 로그인 정보 입니다</div>");
+      result = template.result_html("",fs.readFileSync(__dirname+"/index.html")+"<div>존재하지 않는 로그인 정보 입니다</div>");
     }else {
-      result = template.result_html("",fs.readFileSync("./index.html"));
+      result = template.result_html("",fs.readFileSync(__dirname+"/index.html"));
     }
     response.writeHead(200);
     response.end(result);
