@@ -22,7 +22,7 @@ module.exports ={
         console.log(error);
       }
       if(results.length!=0){
-        response.writeHead(302, {'Location': '/room1/'});
+        response.writeHead(302, {'Location': `/room1/?id=${queryData.id}`});
         response.end();
       }
       else{
