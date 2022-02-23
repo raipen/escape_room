@@ -8,8 +8,9 @@ const template = require('/web/template/template.js');
 module.exports ={
   main:function(request,response){
     var queryData = url.parse(request.url, true).query;
+    console.log(properties);
     var connection = mysql.createConnection({
-      host     : properties.DBAaddress,
+      host     : properties.DBaddress,
       port     : properties.DBport,
       user     : properties.DBuser,
       password : properties.DBpassword,
