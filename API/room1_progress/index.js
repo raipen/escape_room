@@ -20,7 +20,9 @@ module.exports ={
     var select_query = `select * from room1_progress WHERE (user_id = '${queryData.id}');`
     connection.query(select_query,
       function(error,results,fields){
-        var result = {success:false};
+        var result = {
+          success:false
+        };
         if (error) {
           console.log("error");
           console.log(error);
