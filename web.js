@@ -3,6 +3,8 @@ var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 
+console.log("log");
+
 var app = http.createServer(function(request,response){
     var _url = request.url;
     console.log(_url);
