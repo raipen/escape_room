@@ -1,7 +1,7 @@
 const fs = require('fs');
 const url = require('url');
 const qs = require('querystring');
-const template = require('I:/학교/2022/방탈출/escape_room/template/template.js');
+const template = require('/web/template/template.js');
 
 module.exports ={
   main:function(request,response){

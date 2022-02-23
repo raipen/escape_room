@@ -2,7 +2,7 @@ const fs = require('fs');
 const url = require('url');
 const qs = require('querystring');
 const mysql = require('mysql');
-const properties = require('I:/학교/2022/방탈출/escape_room/properties.js');
+const properties = require('/web/properties.js');
 
 module.exports ={
   main:function(request,response){
