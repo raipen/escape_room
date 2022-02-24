@@ -48,7 +48,19 @@ th, td {
   background:transparent;
   color:black;
 }
-
+.container{
+  width:300vw;
+  transition: transform 0.5s;
+}
+.inner{
+  width:100vw;
+  float: left;
+}
+.inner img{
+  display: block;
+  margin: -16px auto;
+  width: 69%
+}
 .dark{
   width:100%;
   height: 100%;

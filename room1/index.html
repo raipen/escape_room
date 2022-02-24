@@ -6,7 +6,7 @@
 
 </head>
 <body bgcolor="#c6c6c6">
-  <img class ="img" src = "첫정면.png">
+
   <table class="table1">
   <tbody>
     <tr>
@@ -46,7 +46,35 @@
     </tr>
   </tbody>
   </table>
+<div style="overflow: hidden">
+  <div class = "container">
+    <div class="inner">
+      <img src="정면.png">
+    </div>
+    <div class="inner">
+      <img src="왼쪽.png">
+    </div>
+    <div class="inner">
+      <img src="오른쪽.png">
+    </div>
+  </div>
+</div>
+<button class="버튼1">1</button>
+<button class="버튼2">2</button>
+<button class="버튼3">3</button>
 
+<script>
+document.querySelector('.버튼2').addEventListener('click', function(){
+  document.querySelector('.container').style.transform = 'translate(-100vw)';
+});
+document.querySelector('.버튼3').addEventListener('click', function(){
+  document.querySelector('.container').style.transform = 'translate(-200vw)';
+});
+document.querySelector('.버튼1').addEventListener('click', function(){
+  document.querySelector('.container').style.transform = 'translate(0vw)';
+});
+
+</script>
   <button type="button" class="button buttonl">◄</button>
   <button type="button" class="button buttonr">►</button>
 </body>
