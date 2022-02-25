@@ -1,6 +1,3 @@
-
-
-
 .img{
   display: block;
   margin: -16px auto;
@@ -19,6 +16,13 @@ th, td {
   padding:88px;
   background-color: #b29d84;
   }
+#light_switch{
+  cursor:pointer;
+  z-index: 100;
+  position: absolute;
+  left:1080px;
+  top:280px;
+}
 #table1{
   left:8px;
 }
@@ -75,7 +79,7 @@ th, td {
   display:none;
   left:250%;
 }
-.inner img{
+.inner_img{
   display: block;
   margin: -16px auto;
   width: 69%
