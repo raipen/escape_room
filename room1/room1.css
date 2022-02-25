@@ -20,8 +20,33 @@ th, td {
   cursor:pointer;
   z-index: 100;
   position: absolute;
-  left:1080px;
-  top:280px;
+  width:2.8%;
+  left:1375px;
+  top:268px;
+}
+#lock{
+  cursor:pointer;
+  z-index: 100;
+  position: absolute;
+  width:4.5%;
+  left:749px;
+  top:311px;
+}
+#abox{
+  cursor:pointer;
+  z-index: 100;
+  position: absolute;
+  width:11%;
+  left:695px;
+  top:603px;
+}
+#log{
+  cursor:pointer;
+  z-index: 100;
+  position: absolute;
+  width:9%;
+  left:1149px;
+  top:690px;
 }
 #table1{
   left:8px;
@@ -56,6 +81,7 @@ th, td {
   color:black;
 }
 .container{
+
   width:300vw;
   transition: transform 0.5s;
 }

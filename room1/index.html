@@ -9,7 +9,7 @@
   const user_id=urlParams.get('id');
   </script>
 </head>
-<body bgcolor="#c6c6c6">
+<body bgcolor="#c6c6c6" style="overflow: hidden">
 
   <table id="table1" class="table">
   <tbody>
@@ -50,11 +50,12 @@
     </tr>
   </tbody>
   </table>
-  <div class="dark"></div>
+  <div></div>
 <div style="overflow: hidden">
   <div class = "container">
     <div class="inner front">
       <img class="inner_img" src="front.png">
+      <img id="lock" src="lock.png">
     </div>
     <div class="inner left">
       <img class="inner_img" src="left.png">
@@ -62,15 +63,15 @@
     </div>
     <div class="inner right">
       <img class="inner_img" src="right.png">
+      <img id="abox" src="box.png">
     </div>
     <div class="inner back">
       <img class="inner_img" src="back.png">
+      <img id="log" src="log.png">
     </div>
   </div>
 </div>
-<button class="버튼1">1</button>
-<button class="버튼2">2</button>
-<button class="버튼3">3</button>
+
 <button type="button" class="button buttonl">◄</button>
 <button type="button" class="button buttonr">►</button>
 
