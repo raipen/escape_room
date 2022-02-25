@@ -3,11 +3,45 @@
 <head>
   <meta charset = "utf-8"/>
   <link rel="stylesheet" type="text/css" href="room1.css">
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const user_id=urlParams.get('id');
+  function switch_light(){
+    console.log("asdf");
+    $.ajax({
+      url:'/API/room1_progress/',
+      type:'GET',
+      data:{id:user_id}
+    }).done(function(data){
+      console.log("a");
+      data = JSON.parse(data);
+      if(data.light=='on'){
+        $(".dark").css({opacity:0.8});
+        $.ajax({
+          url:'/API/room1_update/',
+          type:'GET',
+          data:{id:user_id,light:"off"}
+        }).done(function(data){
+          console.log(JSON.parse(data));
+        });
+      }else{
+        $(".dark").css({opacity:0.5});
+        $.ajax({
+          url:'/API/room1_update/',
+          type:'GET',
+          data:{id:user_id,light:"on"}
+        }).done(function(data){
+          console.log(JSON.parse(data));
+        });
+      }
+    });
+  }
+  </script>
 </head>
 <body bgcolor="#c6c6c6">
 
-  <table class="table1">
+  <table id="table1" class="table">
   <tbody>
     <tr>
       <td></td>
@@ -27,7 +61,7 @@
   </tbody>
   </table>
 
-  <table class="table2">
+  <table id="table2" class="table">
   <tbody>
     <tr>
       <td></td>
@@ -46,24 +80,55 @@
     </tr>
   </tbody>
   </table>
+  <div class="dark"></div>
 <div style="overflow: hidden">
   <div class = "container">
-    <div class="inner">
+    <div class="inner front">
       <img src="front.png">
     </div>
-    <div class="inner">
-      <img src="left.png">
+    <div class="inner left">
+      <img src="left.png" usemap="#map_left">
+      <map name="map_left" id="map_left">
+        <area shape="rect" coords="1080,280,1130,380" href="#" alt="" onclick="switch_light();">
+      </map>
     </div>
-    <div class="inner">
+    <div class="inner right">
       <img src="right.png">
+    </div>
+    <div class="inner back">
+      <img src="back.png">
     </div>
   </div>
 </div>
 <button class="버튼1">1</button>
 <button class="버튼2">2</button>
 <button class="버튼3">3</button>
+<button type="button" class="button buttonl">◄</button>
+<button type="button" class="button buttonr">►</button>
 
 <script>
+$('.buttonl').click(function(){
+  console.log("asdf");
+  var front = $('.front');
+  var right = $('.right');
+  var left = $('.left');
+  var back = $('.back');
+  front.addClass('left').removeClass('front');
+  right.addClass('front').removeClass('right');
+  left.addClass('back').removeClass('left');
+  back.addClass('right').removeClass('back');
+});
+$('.buttonr').click(function(){
+  console.log("asdf");
+  var front = $('.front');
+  var right = $('.right');
+  var left = $('.left');
+  var back = $('.back');
+  front.addClass('right').removeClass('front');
+  right.addClass('back').removeClass('right');
+  left.addClass('front').removeClass('left');
+  back.addClass('left').removeClass('back');
+});
 document.querySelector('.버튼2').addEventListener('click', function(){
   document.querySelector('.container').style.transform = 'translate(-100vw)';
 });
@@ -73,9 +138,19 @@ document.querySelector('.버튼3').addEventListener('click', function(){
 document.querySelector('.버튼1').addEventListener('click', function(){
   document.querySelector('.container').style.transform = 'translate(0vw)';
 });
-
+$.ajax({
+  url:'/API/room1_progress/',
+  type:'GET',
+  data:{id:user_id}
+}).done(function(data){
+  console.log("a");
+  data = JSON.parse(data);
+  if(data.light=='on'){
+    $(".dark").css({opacity:0.5});
+  }else{
+    $(".dark").css({opacity:0.8});
+  }
+});
 </script>
-  <button type="button" class="button buttonl">◄</button>
-  <button type="button" class="button buttonr">►</button>
 </body>
 </html>

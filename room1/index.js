@@ -13,11 +13,11 @@ module.exports = {
       return;
     }
     response.writeHead(200);
-    var header = `<script type="text/javascript">
-    const user_id = "${queryData.id}";
-    ${fs.readFileSync(__dirname+"/room1.js")}
-    </script>
-    <style>${fs.readFileSync(__dirname+"/room1.css")}</style>`;
+    // var header = `<script type="text/javascript">
+    // const user_id = "${queryData.id}";
+    // ${fs.readFileSync(__dirname+"/room1.js")}
+    // </script>
+    // <style>${fs.readFileSync(__dirname+"/room1.css")}</style>`;
     //response.end(template.result_html(header,fs.readFileSync(__dirname+"/index.html")));
     response.end(fs.readFileSync(__dirname+"/index.html"));
   }

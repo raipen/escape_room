@@ -2,13 +2,13 @@ const fs = require('fs');
 const url = require('url');
 const qs = require('querystring');
 const mysql = require('mysql');
-const properties = require('I:/학교/2022/방탈출/escape_room/properties.js');
+const properties = require('/web/properties.js');
 
 module.exports ={
   main:function(request,response){
     var queryData = url.parse(request.url, true).query;
     var connection = mysql.createConnection({
-      host     : properties.DBAaddress,
+      host     : properties.DBaddress,
       port     : properties.DBport,
       user     : properties.DBuser,
       password : properties.DBpassword,
@@ -31,5 +31,6 @@ module.exports ={
         response.writeHead(200);
         response.end(JSON.stringify(result));
     });
+    connection.end();
   }//main 함수 끝
 }
