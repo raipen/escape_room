@@ -75,7 +75,7 @@ body::before{
     25%{transition: translateX(8px);}
     50%{transition:translateX(-8px)}
     75%{transition: translateX(8px)}
-   
+
 }
 
 .int-area input:focus + label,
@@ -106,7 +106,7 @@ body::before{
 }
 
 .caption a{
-    font-size: 15px; 
+    font-size: 15px;
     color: #999;
     text-decoration:none;
 
