@@ -1,7 +1,7 @@
 const fs = require('fs');
 const url = require('url');
 const qs = require('querystring');
-const template = require('I:/학교/2022/방탈출/escape_room/template/template.js');
+const template = require('/web/template/template.js');
 
 module.exports ={
   main:function(request,response){
@@ -12,11 +12,16 @@ module.exports ={
       response.end(fs.readFileSync("./favicon.ico"));
       return;
     }
+    if(_url.endsWith(".png")){
+      response.writeHead(200);
+      response.end(fs.readFileSync("/web"+_url));
+      return;
+    }
     var result="";
-    if(queryData.retry==1){
-      result = template.result_html("",fs.readFileSync(__dirname+"/index.html")+"<div>존재하지 않는 로그인 정보 입니다</div>");
+    if(queryData.retry==1){//아이디 비번 틀리면
+      result = template.result_html(`<style>${fs.readFileSync(__dirname+"/login.css")}</style>)`,fs.readFileSync(__dirname+"/login.html")+"alert(존재하지 않는 로그인 정보 입니다)");
     }else {
-      result = template.result_html("",fs.readFileSync(__dirname+"/index.html"));
+      result = template.result_html(`<style>${fs.readFileSync(__dirname+"/login.css")}</style>`,fs.readFileSync(__dirname+"/login.html"));
     }
     response.writeHead(200);
     response.end(result);

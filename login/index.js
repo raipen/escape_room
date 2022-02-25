@@ -2,14 +2,16 @@ const fs = require('fs');
 const url = require('url');
 const qs = require('querystring');
 const mysql = require('mysql');
-const properties = require('I:/학교/2022/방탈출/escape_room/properties.js');
-const template = require('I:/학교/2022/방탈출/escape_room/template/template.js');
+const properties = require('/web/properties.js');
+
+const template = require('/web/template/template.js');
 
 module.exports ={
   main:function(request,response){
     var queryData = url.parse(request.url, true).query;
+    console.log(properties);
     var connection = mysql.createConnection({
-      host     : properties.DBAaddress,
+      host     : properties.DBaddress,
       port     : properties.DBport,
       user     : properties.DBuser,
       password : properties.DBpassword,
