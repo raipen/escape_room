@@ -1,8 +1,8 @@
 
     <section class="login-form">
         <h1>LOGIN</h1>
-        <form action="">
-            <div class="int-area">
+        <form action="/login/"> <!--액션의 위치로 데이터를 보냄-->
+            <div class="int-area"> 
                 <input type="text" name="id" id="id"
                 autocomplete="off" required>
                 <label for="id">USER NAME</label>
@@ -15,9 +15,11 @@
 
             <div class="btn-area">
                 <button id = "btn" type = "submit">LOGIN</button>
-                <button id = "account" type ="submit">ACCOUNT</button>
+               
             </div>
+            
         </form>
+        <button><a href="/account/">ACCOUNT</a></button>
         <div class="caption">
             <a href="">Forgot Password?</a>
         </div>
